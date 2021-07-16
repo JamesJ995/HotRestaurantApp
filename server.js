@@ -24,7 +24,7 @@ app.get("/reserve", (req, res) =>
 // Tables GET
 app.get('/tables', (req, res) => res.json(tables));
 // Reservation POST
-app.post("/api/characters", (req, res) => {
+app.post("/reserve", (req, res) => {
     const newReservation = req.body;
     tables.push(newReservation);
 });

@@ -1,16 +1,45 @@
-
-const express = require('express');
-const path = require('path');
-const { getMaxListeners } = require('process');
-
+const express = require("express");
+const path = require("path");
+const { getMaxListeners } = require("process");
 
 // Sets up the Express App
 
 const app = express();
 const PORT = 3000;
 
+const reservations = [
+  {
+    table: 1,
+    name: "Yoda",
+    phoneNumber: "469 - 469 - 4690",
+    email: "yoda@gmail.com",
+    uniqueId: "ydacoolas151",
+  },
+  {
+    table: 2,
+    name: "chicken",
+    phoneNumber: "469 - 314 - 4500",
+    email: "chickenemail@gmail.com",
+    uniqueId: "chicken41",
+  },
+  {
+    table: 3,
+    name: "monkey",
+    phoneNumber: "469 - 220 - 4580",
+    email: "moneky@gmail.com",
+    uniqueId: "monkey51",
+  },
+];
 
-
+const waitList = [
+  {
+    table: "",
+    name: "",
+    phoneNumber: "",
+    email: "",
+    uniqueId: "",
+  },
+];
 
 // Routes for displaying html pages:
 
@@ -28,11 +57,12 @@ app.get("/reserve", (req, res) =>
 // Gets and posts for table data
 
 // Tables GET
-app.get('/tables', (req, res) => res.json(tables));
+app.get("/tables", (req, res) => res.json(tables));
+app.get("/reserve", (req, res) => res.json(reserve));
 // Reservation POST
 app.post("/api/reserve", (req, res) => {
-    const newReservation = req.body;
-    tables.push(newReservation);
+  const newReservation = req.body;
+  tables.push(newReservation);
 });
 
 // Listener

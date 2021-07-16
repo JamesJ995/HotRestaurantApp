@@ -7,7 +7,10 @@ const { getMaxListeners } = require("process");
 const app = express();
 const PORT = 3000;
 
+<<<<<<< HEAD
 // Sets up the Express app to handle data parsing
+=======
+>>>>>>> da3b920c07891e2d60940a3e0652b718b91e4f41
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -69,8 +72,12 @@ app.get("/api/reserve", (req, res) => res.json(reserveForm));
 // Reservation POST
 app.post("/api/reserve", (req, res) => {
   const newReservation = req.body;
+<<<<<<< HEAD
 
   if (reservations.length >4){
+=======
+  if (reservations.length > 4){
+>>>>>>> da3b920c07891e2d60940a3e0652b718b91e4f41
       waitList.push(newReservation);
         
   }else {

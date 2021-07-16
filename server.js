@@ -7,6 +7,10 @@ const { getMaxListeners } = require("process");
 const app = express();
 const PORT = 3000;
 
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const reservations = [
   {
     table: 1,
@@ -63,13 +67,17 @@ app.get("/api/tables", (req, res) => res.json(waitList));
 // Reservations GET
 app.get("/api/reserve", (req, res) => res.json(reserveForm));
 // Reservation POST
-app.post("/reserve", (req, res) => {
+app.post("/api/reserve", (req, res) => {
   const newReservation = req.body;
-  if (tables.length >4){
+
+  if (reservations.length >4){
       waitList.push(newReservation);
+        
   }else {
-  tables.push(newReservation);
+  reservations.push(newReservation);
   }
+  res.json(newReservation);
+  console.log(reservations);
 });
 
 // Listener

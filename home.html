@@ -53,39 +53,14 @@
         </footer>
     </div>
     <script>
-        const url = 'https://localhost:3000/'
-        const reservations = [
-            {
-                table: 1,
-                name: 'Yoda',
-                phoneNumber: 469 - 469 - 4690,
-                Email: "yoda@gmail.com",
-                uniqueId: "ydacoolas151",
-            },
-            {
-                table: 2,
-                name: 'chicken',
-                phoneNumber: 469 - 314 - 4500,
-                Email: "chickenemail@gmail.com",
-                uniqueId: "chicken41",
-            },
-            {
-                table: 3,
-                name: 'monkey',
-                phoneNumber: 469 - 220 - 4580,
-                Email: "moneky@gmail.com",
-                uniqueId: "monkey51",
-            },
-        ];
-
-        const response = await fetch(url, {
+        const getReservations = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(reservations)
         });
-        const data = await response.json();
+        const reservationData = await response.json();
 
         fetch(url)
             .then(response => response.json())

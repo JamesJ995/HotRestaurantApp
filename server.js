@@ -16,21 +16,21 @@ const reservation = [
         name: 'Yoda',
         phoneNumber: 469-469-4690,
         Email: "yoda@gmail.com",
-        uniqueId: ydacoolas151,
+        uniqueId: "ydacoolas151",
     },
     {
         table: 2,
         name: 'chicken',
         phoneNumber: 469-314-4500,
         Email: "chickenemail@gmail.com",
-        uniqueId: chicken41,
+        uniqueId: "chicken41",
     },
     {
         table: 3,
         name: 'monkey',
         phoneNumber: 469-220-4580,
         Email: "moneky@gmail.com",
-        uniqueId: monkey51,
+        uniqueId: "monkey51",
     },
   ];
 

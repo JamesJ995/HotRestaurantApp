@@ -65,7 +65,11 @@ app.get("/api/reserve", (req, res) => res.json(reserveForm));
 // Reservation POST
 app.post("/reserve", (req, res) => {
   const newReservation = req.body;
+  if (tables.length >4){
+      waitList.push(newReservation);
+  }else {
   tables.push(newReservation);
+  }
 });
 
 // Listener

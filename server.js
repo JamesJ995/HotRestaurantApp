@@ -10,34 +10,34 @@ const PORT = 3000;
 const reservations = [
   {
     table: 1,
-    name: "Yoda",
-    phoneNumber: "469 - 469 - 4690",
-    email: "yoda@gmail.com",
-    uniqueId: "ydacoolas151",
+    name: "Jeff",
+    phoneNumber: "555-123-4567",
+    email: "test@email.com",
+    uniqueId: "Jeff's Party",
   },
   {
     table: 2,
-    name: "chicken",
-    phoneNumber: "469 - 314 - 4500",
-    email: "chickenemail@gmail.com",
-    uniqueId: "chicken41",
+    name: "Chicken",
+    phoneNumber: "555-987-6541",
+    email: "chicken@email.com",
+    uniqueId: "Chicken's Party",
   },
   {
     table: 3,
-    name: "monkey",
+    name: "Monkey",
     phoneNumber: "469 - 220 - 4580",
-    email: "moneky@gmail.com",
-    uniqueId: "monkey51",
+    email: "moneky@email.com",
+    uniqueId: "Monkey's Party",
   },
 ];
 
 const waitList = [
   {
-    table: "",
-    name: "",
-    phoneNumber: "",
-    email: "",
-    uniqueId: "",
+    table: "N/A",
+    name: "Frog",
+    phoneNumber: "555-753-1564",
+    email: "frog@email.com",
+    uniqueId: "Frog's Party",
   },
 ];
 
@@ -57,10 +57,13 @@ app.get("/reserve", (req, res) =>
 // Gets and posts for table data
 
 // Tables GET
-app.get("/tables", (req, res) => res.json(tables));
-app.get("/reserve", (req, res) => res.json(reserve));
+app.get("/api/tables", (req, res) => res.json(reservations));
+// Tables GET
+app.get("/api/tables", (req, res) => res.json(waitList));
+// Reservations GET
+app.get("/api/reserve", (req, res) => res.json(reserveForm));
 // Reservation POST
-app.post("/api/reserve", (req, res) => {
+app.post("/reserve", (req, res) => {
   const newReservation = req.body;
   tables.push(newReservation);
 });

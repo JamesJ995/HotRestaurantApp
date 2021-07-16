@@ -63,7 +63,7 @@ app.get("/reserve", (req, res) =>
 // Tables GET
 app.get("/api/tables", (req, res) => res.json(reservations));
 // Tables GET
-app.get("/api/tables", (req, res) => res.json(waitList));
+app.get("/api/waitlist", (req, res) => res.json(waitList));
 // Reservations GET
 app.get("/api/reserve", (req, res) => res.json(reserveForm));
 // Reservation POST
@@ -82,3 +82,4 @@ app.post("/api/reserve", (req, res) => {
 
 // Listener
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+
